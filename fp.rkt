@@ -1,6 +1,6 @@
 ;2. 
 (define (sum-up-numbers-simple L)
-         ((NULL? L) 0 ;checks to see if the list empty or null
-         (NOT (LIST? L) ) 0 ;checks to see if L is actually list
-         (+ (CAR L) (sum-up-numbers-simple (CDR L))) ))
-;adds the 1st item in the list and adds the remaining.
+         (cond
+          ((null? L) 0) ;checks to see if list is empty return zero
+          ((not (list? L)) (display "not a list")) ; if item is not a list display not a list
+          ((+ (car L) (sum-up-numbers-simple (cdr L))) ))) ; return the first item in the list and add the rest of the numbers

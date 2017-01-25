@@ -1,3 +1,15 @@
+;1.
+(define (reverse-general L)
+  (cond
+    ;((null? L) '()) if the list is empty return an empty list
+    ((list? L)
+    (append (reverse-general (cdr L)) 
+            (list (reverse-general (car L)))
+            )
+    );
+    ;(not (list? L)) if there is only 1 item in the list return l
+    )
+  )
 
 ;2. 
 (define (sum-up-numbers-simple L)

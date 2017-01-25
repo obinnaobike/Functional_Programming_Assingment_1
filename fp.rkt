@@ -19,3 +19,7 @@
           ((+ (car L) (sum-up-numbers-simple (cdr L))) ))) ; return the first item in the list and add the rest of the numbers
 
 ;4.
+(define (min-above-min L1 L2)
+	(cond
+	((null? L1) #f)
+	

@@ -1,13 +1,13 @@
 ;1.
 (define (reverse-general L)
   (cond
-    ;((if (null? L) '()) if the list is empty return an empty list
+    ((null? L) '()) ;if the list is empty return an empty list
     ((list? L)
-    (cons (reverse-general (cdr L)) 
+    (append (reverse-general (cdr L)) 
             (list (reverse-general (car L)))
             )
     ); concatenate the very last elements of the list first then the last
-    ;(else (not (list? L)) L) if there is only 1 item in the list return L
+    (else (not (list? L)) L) if there is only 1 item in the list return L
     )
   )
 

@@ -23,13 +23,12 @@
 ;3
 
 (define (sum-up-numbers-simple L)
-  (cond 
-  ((null? L) '() ; if the list is empty or null return an empty list
-      ((list? (car L)) ;if the first item in the list is a list
-          (+ (sum-up-numbers-simple (car L)) (sum-up-numbers-simple (cdr L))) 
-;call the function recursively on the first item in the list and call it on the rest of the items in the list
-          (+ (car L) (sum-up-numbers-simple (cdr L)))))) 
-; otherwise add the first item in the list to the rest of the items in the list
+         (cond
+          ((null? L) 0) ;checks to see if list is empty return zero
+          ((list? (car L)) (+ (sum-up-numbers-simple (car L)) (sum-up-numbers-simple (cdr L)))) ;if the first item is a list add it with the rest of the numbers in the list
+          ((not (list? L)) L) ; if item is not a list return the item
+          ((not (number? (car L))) (sum-up-numbers-simple (cdr L))) ; if the item is not a number check if the rest of the list is a number
+((+ (car L) (sum-up-numbers-simple (cdr L)))))) ;if its not a nested list add the item and the rest of the numbers in the list
 
 ;4.
 

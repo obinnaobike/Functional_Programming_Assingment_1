@@ -38,4 +38,5 @@ minimum-L1 (min(L1))
 	(cond
 	((null? L1) #f)
 	((null? L2) minimum-L1)
+	(( >= (minimum-L2) (minimum-L1) #f)
 	

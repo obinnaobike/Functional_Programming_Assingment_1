@@ -33,10 +33,10 @@
 
 (define (min-above-min L1 L2)
 (let 
-minimum-L1 (min(L1))
+minimum-L1 (min(L1)) ; set the variable minimum-L1 to min of l1
 (let minimum-L2 (min(L2)))
 	(cond
-	((null? L1) #f)
-	((null? L2) minimum-L1)
-	(( >= (minimum-L2) (minimum-L1) #f)
-	(( < (minimum-L2) (minimum-L1) minimum-L1)))
+	((null? L1) #f) ; if list L1 is empty return false
+	((null? L2) minimum-L1) ; if list l2 is empty return mimimum-L1
+	(( >= (minimum-L2) (minimum-L1) #f) ; if the minimum of l2 is greater than or equal to minimum of l1 return false.
+	(( < (minimum-L2) (minimum-L1) minimum-L1))) ;else return minimum of l1

@@ -21,7 +21,7 @@
 (define sum-up-numbers-simple L)
   (if (null? li) '())
       (if (list? (car L))
-          (+ (my-summation (car L)) (my-summation (cdr L)))
+          (+ (sum-up-numbers-simple (car L)) (sum-up-numbers-simple (cdr L)))
           )
 
 ;4.

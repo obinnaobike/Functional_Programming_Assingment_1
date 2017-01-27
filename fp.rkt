@@ -18,12 +18,14 @@
           ((not (list? L)) L) ; if item is not a list return the item
           ((+ (car L) (sum-up-numbers-simple (cdr L))) ))) ; return the first item in the list and add the rest of the numbe
 ;3
-(define sum-up-numbers-simple L)
-  (if (null? li) '())
-      (if (list? (car L))
-          (+ (sum-up-numbers-simple (car L)) (sum-up-numbers-simple (cdr L)))
-          )
-
+(define (sum-up-numbers-simple L)
+  (cond 
+  ((null? L) '() ; if the list is empty or null return an empty list
+      ((list? (car L)) ;if the first item in the list is a list
+          (+ (sum-up-numbers-simple (car L)) (sum-up-numbers-up-simple (cdr li))) 
+;call the function recursively on the first item in the list and call it on the rest of the items in the list
+          (+ (car L) (sum-up-numbers-up-simple (cdr L)))))) 
+; otherwise add the first item in the list to the rest of the items in the list
 ;4.
 (define (min-above-min L1 L2)
 	(cond
